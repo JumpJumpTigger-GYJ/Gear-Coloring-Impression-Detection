@@ -1,0 +1,18 @@
+#FastGAN Generator
+
+generator:
+  #[from, name, args]
+  [
+   [null, CondBroadcast_G],
+   [-1, ConvTranspose, [263, 263]],
+   [-1, Conv2d, [263, 256, 1, 1, 0]],
+   [-1, BasicBlock, [256, 128]], #3
+   [-1, BasicBlock, [128, 64]], #4
+   [-1, BasicBlock, [64, 32]],
+   [[-1, 3], SLE, [32, 128]],
+   [-1, BasicBlock, [32, 16]],
+   [[-1, 4], SLE, [16, 64]],
+   [-1, BasicBlock, [16, 3]],
+   [-1, nn.Conv2d, [3, 3, 3, 1, 1]],
+   [-1, nn.Tanh]
+  ]

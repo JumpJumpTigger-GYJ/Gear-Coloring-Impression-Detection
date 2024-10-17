@@ -1,0 +1,11 @@
+#SN
+classifier:
+  [
+   [-1, nn.Linear, [512, 256]],
+   [-1, nn.LeakyReLU, [0.1]],
+   [-1, nn.Linear, [256, 128]],
+   [-1, nn.LeakyReLU, [0.1]],
+   [-1, nn.Linear, [128, 64]],
+   [-1, nn.LeakyReLU, [0.1]],
+   [-1, nn.Linear, [64, 1]]
+  ]
